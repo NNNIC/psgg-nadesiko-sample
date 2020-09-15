@@ -1,0 +1,77 @@
+＃
+次ステートは「S_START」
+現在ステートは空
+ループカウンタは０
+ループカウンタ最大値は１００００
+
+オンの間
+	ループカウンタに１を足して、ループカウンタに代入する
+	もし、ループカウンタ＝ループカウンタ最大値ならば、
+		「エラー：ループカウンタが最大値{ループカウンタ}に達しました」と言う
+		終了
+	＃
+	もし、次ステートが空でなければ、
+		現在ステートに次ステートを代入
+		次ステートに空を代入
+		最初に真を代入
+	違えば
+		最初に偽を代入
+	＃
+	もし、現在ステートが空でなければ、
+        ＃【StateGoの自動挿入開始】 indent(8) $/./->#switch$
+        ＃             psggConverterLib.dll converted from psgg-file:TestControl.psgg
+
+        もし、（現在ステート＝「S_0000」）ならば、最初でS_0000する
+        もし、（現在ステート＝「S_END」）ならば、最初でS_ENDする
+        もし、（現在ステート＝「S_START」）ならば、最初でS_STARTする
+
+
+		＃【StateGoの自動挿入終了】
+		もし、（現在ステート＝「S_END」）ならば、
+			最初でS_ENDする
+			「終了」を表示
+			終了	
+
+＃ 【StateGoの自動挿入開始】 indent(0) $/./$
+＃             psggConverterLib.dll converted from psgg-file:TestControl.psgg
+
+＃
+*S_0000(bFirstで)
+    ＃
+    もし、bFirstが真なら
+		「こんにちは、なでしこさん！」と言う
+    次ステートに「S_END」を代入
+    戻る
+＃
+*S_END(bFirstで)
+    ＃
+    戻る
+＃
+*S_START(bFirstで)
+    ＃
+    次ステートに「S_0000」を代入
+    戻る
+
+
+＃ 【StateGoの自動挿入終了】
+
+　
+/*
+以下は、StateGo用のマクロです。
+
+:psgg-macro-start
+
+; コメント行  {%0}はコメントに変換
+commentline=＃ {%0}
+
+#switch=@@@
+もし、（現在ステート＝「[[state]]」）ならば、最初で[[state]]する
+@@@
+
+:psgg-macro-end
+*/
+
+
+
+
+
