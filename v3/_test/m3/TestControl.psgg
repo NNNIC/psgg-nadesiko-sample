@@ -13,9 +13,9 @@ check_excel_writable=no
 
 sheet=state-chart
 nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n007,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,
-stateid_list=,,,,,,,,,,,,,,,,,,,,s000e,s000f,s0010,,,,,,,,,,,,,,
+stateid_list=,,,,,,,,,,,,,,,,,,,,s000e,s000f,s0010,s0021,s0022,s0023,s0024,s0025,s0026,s0027,s0028,s0029,s002a,,,,,,s0020
 max_name_id=20
-max_state_id=31
+max_state_id=42
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -42,6 +42,17 @@ n014=embed
 s000e=S_START
 s000f=S_END
 s0010=S_0000
+s0020=S_GSB000
+s0021=S_SBS000
+s0022=S_0001
+s0023=S_RET000
+s0024=S_ODD_OR_EVEN
+s0025=S_0003
+s0026=S_SUBSTART2
+s0027=S_LOOP1
+s0028=S_RETURN2
+s0029=S_0002
+s002a=E_LOOP1
 
 
 [s000e]
@@ -63,15 +74,15 @@ n00f=end
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n00d=348,179
+n00d=1130,198
 n00e=4
 
 [s0010]
 n002=S_0000
-n006=S_END
+n006=S_GSB000
 n007=「こんにちは、なでしこさん！」と言う
 n00c=@@@
 /
@@ -82,6 +93,166 @@ The root
 n00d=73,178
 n00e=3
 
+[s0020]
+n002=S_GSB000
+n00f=gosub
+n006=S_LOOP1
+n010=S_SBS000
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=156,956
+n00e=5
+
+[s0021]
+n002=S_SBS000
+n00f=substart
+n006=S_0001
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=264,975
+n00e=6
+
+[s0022]
+n002=S_0001
+n006=S_RET000
+n007=「サブルーチンが実行中です」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=381,975
+n00e=7
+
+[s0023]
+n002=S_RET000
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=599,975
+n00e=8
+
+[s0024]
+n002=S_ODD_OR_EVEN
+n007=ループ変数を２で割り、余りをアマリに代入
+n009=@@@
+brifc(S_0002);
+brelse(S_0003);
+@@@
+
+n00a=@@@
+EVEN
+?
+@@@
+
+n00b=@@@
+アマリ＝０
+?
+@@@
+
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=821,639
+n00e=9
+
+[s0025]
+n002=S_0003
+n006=S_RETURN2
+n007=「｛ループ変数｝は偶数です」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=999,807
+n00e=10
+
+[s0026]
+n002=S_SUBSTART2
+n00f=substart
+n006=S_ODD_OR_EVEN
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=686,648
+n00e=11
+
+[s0027]
+n002=S_LOOP1
+n003=１０回繰り返す
+n00f=loop
+n006=S_END
+n010=S_SUBSTART2
+n011=ループ変数は０
+n012=ループ変数＜１０
+n013=ループ変数＝ループ変数＋１
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=495,538
+n00e=12
+
+[s0028]
+n002=S_RETURN2
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=1215,693
+n00e=13
+
+[s0029]
+n002=S_0002
+n006=S_RETURN2
+n007=「{ループ変数}は奇数です」と言う
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=1009,599
+n00e=14
+
+[s002a]
+n002=E_LOOP1
+n014=ループ変数は０
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=503,442
+n00e=15
+
 
 
 ------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
@@ -89,7 +260,7 @@ n00e=3
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/09/16 23:15:33
+; The setting was created automatically. 2020/09/17 22:17:15
 ; * pssgEditor version : 0.66.51249.eb0da3450145a82e8134dcbafdae88a330253a4d
 psggfile=@@@
 TestControl.psgg
@@ -122,7 +293,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":61,"y":47}},{"Key":"S_END","Value":{"x":348,"y":179}},{"Key":"S_0000","Value":{"x":73,"y":178}},{"Key":"S_0001","Value":{"x":86,"y":371}},{"Key":"S_0002","Value":{"x":349,"y":322}},{"Key":"S_0003","Value":{"x":349,"y":484}},{"Key":"S_0004","Value":{"x":346,"y":405}},{"Key":"S_PASS","Value":{"x":577,"y":393}},{"Key":"S_GSB000","Value":{"x":750,"y":388}},{"Key":"S_SBS000","Value":{"x":860,"y":406}},{"Key":"S_0005","Value":{"x":957,"y":406}},{"Key":"S_RET000","Value":{"x":1142,"y":406}},{"Key":"S_0006","Value":{"x":429,"y":889}},{"Key":"S_LOP000","Value":{"x":259,"y":807}},{"Key":"S_SBS001","Value":{"x":347,"y":889}},{"Key":"S_RET001","Value":{"x":610,"y":889}},{"Key":"S_GSB001","Value":{"x":176,"y":720}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":61,"y":47}},{"Key":"S_END","Value":{"x":1130,"y":198}},{"Key":"S_0000","Value":{"x":73,"y":178}},{"Key":"S_GSB000","Value":{"x":156,"y":956}},{"Key":"S_SBS000","Value":{"x":264,"y":975}},{"Key":"S_0001","Value":{"x":381,"y":975}},{"Key":"S_RET000","Value":{"x":599,"y":975}},{"Key":"S_ODD_OR_EVEN","Value":{"x":821,"y":639}},{"Key":"S_0003","Value":{"x":999,"y":807}},{"Key":"S_SUBSTART2","Value":{"x":686,"y":648}},{"Key":"S_LOOP1","Value":{"x":495,"y":538}},{"Key":"S_RETURN2","Value":{"x":1215,"y":693}},{"Key":"S_0002","Value":{"x":1009,"y":599}},{"Key":"E_LOOP1","Value":{"x":503,"y":442}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -206,12 +377,14 @@ eof>>>
 eof>>>
 
 
+<<<?state/^S_/
 <<<?state-typ/^gosub$/
 ＃
 ●[[state]]とは
     ＃ [[state-cmt]]
     $macro:gosub([[gosubstate]],[[nextstate]])$
     戻る
+ここまで
 eof>>>
 
 <<<?state-typ/^subreturn$/
@@ -262,6 +435,7 @@ eof>>>
 
     戻る
 ここまで
+>>>
 ###VARIOUS-CONTENTS-END###
 
 
@@ -276,7 +450,7 @@ psgg=TestControl.psgg
 xls=TestControl.xlsx
 
 sub_src=
-gen_src=TestControl.nako
+gen_src=TestControl.nako3
 
 manager_src=
 manager_dir=
