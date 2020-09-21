@@ -25,7 +25,7 @@ Nadeshiko can accept two kind of orthodox native Japanese expression.
 Because most of Naesiko's users are novice programmer, I use simple theory for State Machine.
 StateGo's state require only A command otherwise other languages require 'init' , 'update' , 'wait', and 'post_wait".
 
-# Nadesi has V1 and V3.
+# Nadesiko has V1 and V3.
 
 V1 is Nadesiko Windows' version.
 V3 is OS indepent version. It works on node.js or Web brwser.
