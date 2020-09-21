@@ -273,7 +273,7 @@ n00e=16
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/09/19 23:20:31
+; The setting was created automatically. 2020/09/21 13:47:31
 ; * pssgEditor version : 0.66.51249.eb0da3450145a82e8134dcbafdae88a330253a4d
 psggfile=@@@
 TestControl.psgg
@@ -291,7 +291,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-init,Initilized
+init,Saved
 @@@
 target_pathdir=@@@
 /
@@ -457,7 +457,6 @@ eof>>>
 sheet=setting.ini
 
 ###VARIOUS-CONTENTS-BEGIN###
-
 [setting]
 
 psgg=TestControl.psgg
@@ -553,8 +552,6 @@ https://github.com/NNNIC/psgg-nadesiko-sample
 
 
 @@@
-
-
 ###VARIOUS-CONTENTS-END###
 
 
