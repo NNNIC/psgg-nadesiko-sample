@@ -33,3 +33,18 @@ V3 is OS indepent version. It works on node.js or Web brwser.
 # Notice
 
 About V3 sample, I did not take into account using Nadesiko on browser very much. It should be thought carefully to create like Javascript sample.
+
+# V1 Sample
+
+## State Chart
+[]()
+
+## Run
+
+# V3 Sample
+
+## State Chart
+
+## Run
+
+
