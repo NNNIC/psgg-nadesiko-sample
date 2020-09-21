@@ -37,14 +37,14 @@ About V3 sample, I did not take into account using Nadesiko on browser very much
 # V1 Sample
 
 ## State Chart
-[](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v1.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v1.png)
 
 ## Run
 
 # V3 Sample
 
 ## State Chart
-[](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v3.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v3.png)
 
 ## Run
 
