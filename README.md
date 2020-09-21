@@ -43,7 +43,7 @@ About V3 sample, I did not take into account using Nadesiko on browser very much
 
 Open TestControl.nako using nakopad.exe and play
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v1play.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v1play.gif)
 
 
 # V3 Sample
@@ -57,5 +57,5 @@ Open TestControl.nako using nakopad.exe and play
 2. Convert.
 3. Open [Nadesiko Editor on net](), then paste source code.
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v3play.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-nadesiko-sample/master/wiki/v3play.gif)
 
