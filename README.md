@@ -41,6 +41,8 @@ About V3 sample, I did not take into account using Nadesiko on browser very much
 
 ## Run
 
+Open TestControl.nako using nakopad.exe and play
+
 # V3 Sample
 
 ## State Chart
