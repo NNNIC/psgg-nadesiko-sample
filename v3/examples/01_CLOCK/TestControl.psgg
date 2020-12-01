@@ -1,7 +1,7 @@
 ﻿;PSGG Editor Backup File
 version=1.1
 file=TestControl.xlsx
-guid=c0a3b647-16d6-4f7d-8854-86eb656b832a
+guid=678608db-bab1-408b-82b9-3870013d4609
 ;set read_from  excel or psgg
 read_from=psgg
 ;set savemode with_excel or psgg_only
@@ -12,10 +12,10 @@ check_excel_writable=no
 ------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
 
 sheet=state-chart
-nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n007,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,
-stateid_list=,,,,,,,,,,,,,,,,,,,,s000e,s000f,s0010,s0021,s0022,s0023,s0024,s0025,s0026,s0027,s0028,s0029,s002a,s002b,,,,,s0020
-max_name_id=20
-max_state_id=43
+nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n015,n007,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,,
+stateid_list=,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,s002c,s002d,s002e,s002f,,s0030
+max_name_id=21
+max_state_id=48
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -23,7 +23,7 @@ n003=state-cmt
 n004=state-ref
 n005=basestate
 n006=nextstate
-n007=command
+n007=update
 n009=branch
 n00a=branch-cmt
 n00b=brcond
@@ -36,40 +36,31 @@ n011=loop_init
 n012=loop_cond
 n013=loop_next
 n014=embed
+n015=init
 
 
 [id_state_dic]
-s000e=S_START
-s000f=S_END
-s0010=S_0000
-s0020=S_GSB000
-s0021=S_SBS000
-s0022=S_0001
-s0023=S_RET000
-s0024=S_ODD_OR_EVEN
-s0025=S_EVEN
-s0026=S_SUBSTART2
-s0027=S_LOOP
-s0028=S_RETURN2
-s0029=S_ODD
-s002a=E_LOOP1
-s002b=C_0001
+s002c=S_START
+s002d=S_END
+s002e=E_0000
+s002f=S_TIMER
+s0030=C_0000
 
 
-[s000e]
+[s002c]
 n002=S_START
 n00f=start
-n006=S_0000
+n006=S_TIMER
 n00c=@@@
 /
 (100,100)
 The root
 @@@
 
-n00d=61,47
+n00d=112,323
 n00e=1
 
-[s000f]
+[s002d]
 n002=S_END
 n00f=end
 n00c=@@@
@@ -78,193 +69,50 @@ n00c=@@@
 The root
 @@@
 
-n00d=1130,198
-n00e=4
+n00d=602,99
+n00e=2
 
-[s0010]
-n002=S_0000
-n006=S_GSB000
-n007=「こんにちは、なでしこさん！」と言う
+[s002e]
+n002=E_0000
+n014=時計ラベル＝「---」のラベル作成。
 n00c=@@@
 /
 (100,100)
-The root
+
 @@@
 
-n00d=73,178
+n00d=311,14
 n00e=3
 
-[s0020]
-n002=S_GSB000
-n00f=gosub
-n006=S_LOOP
-n010=S_SBS000
+[s002f]
+n002=S_TIMER
+n006=
+n007=時計ラベルに今をテキスト設定。
 n00c=@@@
 /
 (100,100)
-The root
+
 @@@
 
-n00d=156,956
+n00d=285,282
+n00e=4
+
+[s0030]
+n001=#pyjGEbBpWttLE7qJt0Ufhw==
+n002=C_0000
+n003=時計サンプル
+n004=@@@
+https://news.mynavi.jp/article/nadeshiko-54/
+@@@
+
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=56,19
 n00e=5
-
-[s0021]
-n002=S_SBS000
-n00f=substart
-n006=S_0001
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=264,975
-n00e=6
-
-[s0022]
-n002=S_0001
-n006=S_RET000
-n007=「サブルーチンが実行中です」と言う
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=381,975
-n00e=7
-
-[s0023]
-n002=S_RET000
-n00f=subreturn
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=599,975
-n00e=8
-
-[s0024]
-n002=S_ODD_OR_EVEN
-n007=アマリ＝ループ変数　％　２
-n009=@@@
-brifc(S_ODD);
-brelse(S_EVEN);
-@@@
-
-n00a=@@@
-偶数
-?
-@@@
-
-n00b=@@@
-アマリ＝０
-?
-@@@
-
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=821,648
-n00e=9
-
-[s0025]
-n002=S_EVEN
-n006=S_RETURN2
-n007=「｛ループ変数｝は偶数です」と言う
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=1023,805
-n00e=10
-
-[s0026]
-n002=S_SUBSTART2
-n00f=substart
-n006=S_ODD_OR_EVEN
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=686,648
-n00e=11
-
-[s0027]
-n002=S_LOOP
-n003=１０回繰り返す
-n00f=loop
-n006=S_END
-n010=S_SUBSTART2
-n011=ループ変数は０
-n012=ループ変数＜１０
-n013=ループ変数＝ループ変数＋１
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=495,538
-n00e=12
-
-[s0028]
-n002=S_RETURN2
-n00f=subreturn
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=1215,648
-n00e=13
-
-[s0029]
-n002=S_ODD
-n006=S_RETURN2
-n007=「{ループ変数}は奇数です」と言う
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=1023,519
-n00e=14
-
-[s002a]
-n002=E_LOOP1
-n014=ループ変数は０
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=493,451
-n00e=15
-
-[s002b]
-n002=C_0001
-n003=StateGo　「　なでしこ　ｖ３　」　サンプル
-n00c=@@@
-/
-(100,100)
-
-@@@
-
-n00d=197,21
-n00e=16
 
 
 
@@ -273,7 +121,7 @@ n00e=16
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/12/01 22:24:52
+; The setting was created automatically. 2020/12/01 23:01:37
 ; * pssgEditor version : 0.67.41110.775d208ea8559a9b2267cae93edd70d3f6c3b84a
 psggfile=@@@
 TestControl.psgg
@@ -282,7 +130,7 @@ xlsfile=@@@
 TestControl.xlsx
 @@@
 guid=@@@
-c0a3b647-16d6-4f7d-8854-86eb656b832a
+678608db-bab1-408b-82b9-3870013d4609
 @@@
 bitmap_width=5000
 bitmap_height=2000
@@ -291,7 +139,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-init,Initilized
+mov,S_TIMER
 @@@
 target_pathdir=@@@
 /
@@ -306,7 +154,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":61,"y":47}},{"Key":"S_END","Value":{"x":1130,"y":198}},{"Key":"S_0000","Value":{"x":73,"y":178}},{"Key":"S_GSB000","Value":{"x":156,"y":956}},{"Key":"S_SBS000","Value":{"x":264,"y":975}},{"Key":"S_0001","Value":{"x":381,"y":975}},{"Key":"S_RET000","Value":{"x":599,"y":975}},{"Key":"S_ODD_OR_EVEN","Value":{"x":821,"y":648}},{"Key":"S_SUBSTART2","Value":{"x":686,"y":648}},{"Key":"S_RETURN2","Value":{"x":1215,"y":648}},{"Key":"E_LOOP1","Value":{"x":493,"y":451}},{"Key":"S_ODD","Value":{"x":1023,"y":519}},{"Key":"S_EVEN","Value":{"x":1023,"y":805}},{"Key":"S_LOOP","Value":{"x":495,"y":538}},{"Key":"C_0001","Value":{"x":197,"y":21}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":112,"y":323}},{"Key":"S_END","Value":{"x":602,"y":99}},{"Key":"E_0000","Value":{"x":311,"y":14}},{"Key":"S_TIMER","Value":{"x":285,"y":282}},{"Key":"C_0000","Value":{"x":56,"y":19}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -436,7 +284,13 @@ eof>>>
 ●[[state]]とは
     ＃ [[state-cmt]]
 
-    [[command]]
+    <<<?init
+    もし、＿初期化フラグがオンならば
+        [[init]]
+    ここまで
+    >>>
+
+    [[update]]
 
     [[branch]]
 
@@ -472,16 +326,16 @@ template_src=
 template_func=template-statefunc.txt
 
 help=
-helpweb=@@@
-psgg-starter-kit\starterkit2\win-bat\helpweb.html
-@@@
-
+helpweb=
 
 
 src_enc=sjis
 
 
-kitpath=psgg-starter-kit\starterkit2\win-bat
+kitpath=@@@
+psgg-starter-kit\starterkit2\nadesiko\nadesiko-v3
+@@@
+
 
 [setupinfo]
 
@@ -499,12 +353,12 @@ statemachine=TestControl
 
 prefix=__PREFIX__
 xlsdir=@@@
-G:\statego\samples\psgg-nadesiko-sample\m1
+G:\statego\samples\psgg-nadesiko-sample\v3\_test2\m1
 @@@
 
 
 gendir=@@@
-G:\statego\samples\psgg-nadesiko-sample\m1
+G:\statego\samples\psgg-nadesiko-sample\v3\_test2\m1
 @@@
 
 
@@ -517,10 +371,10 @@ code_output_end=【StateGoの自動挿入終了】
 
 [jpn]
 
-title=なでしこＶ１用スタートキット 2020/9/15
+title=なでしこＶ３用スタートキット 2020/9/19
 
 detail=@@@
-なでしこＶ１：日本語プログラミング言語用のステートマシンを作成します。
+なでしこＶ３：日本語プログラミング言語用のステートマシンを作成します。
 
 ※サンプルプロジェクトを次のＵＲＬより入手可能。
 https://github.com/NNNIC/psgg-nadesiko-sample
@@ -528,7 +382,7 @@ https://github.com/NNNIC/psgg-nadesiko-sample
 # 以下のファイルを作成します。
 
       TestControl.pssg     --- StateGo データ ファイル
-      TestControl.nako     --- 変換ソースコード
+      TestControl.nako3     --- 変換ソースコード
 
 @@@
 
@@ -537,7 +391,7 @@ https://github.com/NNNIC/psgg-nadesiko-sample
 
 [en]
 
-title=NADESIKO V1 STARTER KIT 2020/9/15
+title=NADESIKO V3 STARTER KIT 2020/9/19
 
 detail=@@@
 This dialog will create files for a state machine.
@@ -548,7 +402,7 @@ https://github.com/NNNIC/psgg-nadesiko-sample
 # File:
 
       TestControl.pssg  --- StateGo Data File.
-      TestControl.nako   --- Converted Souece File.
+      TestControl.nako3   --- Converted Souece File.
 
 
 @@@
@@ -566,8 +420,8 @@ en=command
 jpn=なでしこの命令を書いてください
 [update]
 
-en=Update code
-jpn=更新コードを指定
+jpn=更新用の命令を書いてください
+en=Write update command
 [state]
 
 en=Specify a state name.
@@ -586,8 +440,8 @@ en=Loop incriment
 jpn=ループインクリメント
 [init]
 
-en=initial code
-jpn=初期化命令を指定
+jpn=初期化用の命令を書いてください
+en=Write initailization code
 [embed]
 
 en=Write embed command.
@@ -642,12 +496,9 @@ loop_next=
 init=
 C_=
 brcond=
-nowait=@@@
-*select
-nowait
-@@@
-
+S_=
 embed=
+loop_init=
 update=
 !uuid=
 state-typ=
@@ -655,10 +506,13 @@ state=
 !dir=
 E_=
 state-cmt=
-loop_init=
+nowait=@@@
+*select
+nowait
+@@@
+
 thumbnail=
 loop_cond=
-S_=
 [stateloc]
 
 E_=S1
@@ -681,5 +535,11 @@ thumbnail=read_only,share,S.+
 
 
 ------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+hash=#pyjGEbBpWttLE7qJt0Ufhw==
+
+###BITMAP-DATA-BEGIN###
+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
+###BITMAP-DATA-END###
 
 

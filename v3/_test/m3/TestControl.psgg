@@ -260,8 +260,8 @@ n00e=15
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/09/17 22:17:15
-; * pssgEditor version : 0.66.51249.eb0da3450145a82e8134dcbafdae88a330253a4d
+; The setting was created automatically. 2020/12/01 22:24:03
+; * pssgEditor version : 0.67.41110.775d208ea8559a9b2267cae93edd70d3f6c3b84a
 psggfile=@@@
 TestControl.psgg
 @@@

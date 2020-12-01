@@ -1,7 +1,7 @@
 ﻿;PSGG Editor Backup File
 version=1.1
 file=TestControl.xlsx
-guid=c0a3b647-16d6-4f7d-8854-86eb656b832a
+guid=678608db-bab1-408b-82b9-3870013d4609
 ;set read_from  excel or psgg
 read_from=psgg
 ;set savemode with_excel or psgg_only
@@ -12,10 +12,10 @@ check_excel_writable=no
 ------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
 
 sheet=state-chart
-nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n007,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,
-stateid_list=,,,,,,,,,,,,,,,,,,,,s000e,s000f,s0010,s0021,s0022,s0023,s0024,s0025,s0026,s0027,s0028,s0029,s002a,s002b,,,,,s0020
-max_name_id=20
-max_state_id=43
+nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n015,n007,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,,
+stateid_list=,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,s002c,s002d,s002e,s002f,,s0030
+max_name_id=21
+max_state_id=49
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -23,7 +23,7 @@ n003=state-cmt
 n004=state-ref
 n005=basestate
 n006=nextstate
-n007=command
+n007=update
 n009=branch
 n00a=branch-cmt
 n00b=brcond
@@ -36,40 +36,31 @@ n011=loop_init
 n012=loop_cond
 n013=loop_next
 n014=embed
+n015=init
 
 
 [id_state_dic]
-s000e=S_START
-s000f=S_END
-s0010=S_0000
-s0020=S_GSB000
-s0021=S_SBS000
-s0022=S_0001
-s0023=S_RET000
-s0024=S_ODD_OR_EVEN
-s0025=S_EVEN
-s0026=S_SUBSTART2
-s0027=S_LOOP
-s0028=S_RETURN2
-s0029=S_ODD
-s002a=E_LOOP1
-s002b=C_0001
+s002c=S_START
+s002d=S_END
+s002e=E_0000
+s002f=S_TIMER
+s0030=C_0000
 
 
-[s000e]
+[s002c]
 n002=S_START
 n00f=start
-n006=S_0000
+n006=S_TIMER
 n00c=@@@
 /
 (100,100)
 The root
 @@@
 
-n00d=61,47
+n00d=116,252
 n00e=1
 
-[s000f]
+[s002d]
 n002=S_END
 n00f=end
 n00c=@@@
@@ -78,193 +69,59 @@ n00c=@@@
 The root
 @@@
 
-n00d=1130,198
-n00e=4
+n00d=602,99
+n00e=2
 
-[s0010]
-n002=S_0000
-n006=S_GSB000
-n007=「こんにちは、なでしこさん！」と言う
+[s002e]
+n002=E_0000
+n014=@@@
+時計ラベル＝「---」のラベル作成。
+時計ラベルに{
+  "文字サイズ": "60px",
+  "背景色": "#fff0f0",
+  "余白":"10px",
+  "マージン":"20px"
+}をDOMスタイル一括設定。
+@@@
+
 n00c=@@@
 /
 (100,100)
-The root
+
 @@@
 
-n00d=73,178
+n00d=311,14
 n00e=3
 
-[s0020]
-n002=S_GSB000
-n00f=gosub
-n006=S_LOOP
-n010=S_SBS000
+[s002f]
+n002=S_TIMER
+n006=
+n007=時計ラベルに今をテキスト設定。
 n00c=@@@
 /
 (100,100)
-The root
+
 @@@
 
-n00d=156,956
+n00d=313,252
+n00e=4
+
+[s0030]
+n001=#bfbZMmDFUX1369D6sbco2Q==
+n002=C_0000
+n003=時計サンプル
+n004=@@@
+https://news.mynavi.jp/article/nadeshiko-54/
+@@@
+
+n00c=@@@
+/
+(100,100)
+
+@@@
+
+n00d=56,19
 n00e=5
-
-[s0021]
-n002=S_SBS000
-n00f=substart
-n006=S_0001
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=264,975
-n00e=6
-
-[s0022]
-n002=S_0001
-n006=S_RET000
-n007=「サブルーチンが実行中です」と言う
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=381,975
-n00e=7
-
-[s0023]
-n002=S_RET000
-n00f=subreturn
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=599,975
-n00e=8
-
-[s0024]
-n002=S_ODD_OR_EVEN
-n007=アマリ＝ループ変数　％　２
-n009=@@@
-brifc(S_ODD);
-brelse(S_EVEN);
-@@@
-
-n00a=@@@
-偶数
-?
-@@@
-
-n00b=@@@
-アマリ＝０
-?
-@@@
-
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=821,648
-n00e=9
-
-[s0025]
-n002=S_EVEN
-n006=S_RETURN2
-n007=「｛ループ変数｝は偶数です」と言う
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=1023,805
-n00e=10
-
-[s0026]
-n002=S_SUBSTART2
-n00f=substart
-n006=S_ODD_OR_EVEN
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=686,648
-n00e=11
-
-[s0027]
-n002=S_LOOP
-n003=１０回繰り返す
-n00f=loop
-n006=S_END
-n010=S_SUBSTART2
-n011=ループ変数は０
-n012=ループ変数＜１０
-n013=ループ変数＝ループ変数＋１
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=495,538
-n00e=12
-
-[s0028]
-n002=S_RETURN2
-n00f=subreturn
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=1215,648
-n00e=13
-
-[s0029]
-n002=S_ODD
-n006=S_RETURN2
-n007=「{ループ変数}は奇数です」と言う
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=1023,519
-n00e=14
-
-[s002a]
-n002=E_LOOP1
-n014=ループ変数は０
-n00c=@@@
-/
-(100,100)
-The root
-@@@
-
-n00d=493,451
-n00e=15
-
-[s002b]
-n002=C_0001
-n003=StateGo　「　なでしこ　ｖ３　」　サンプル
-n00c=@@@
-/
-(100,100)
-
-@@@
-
-n00d=197,21
-n00e=16
 
 
 
@@ -273,7 +130,7 @@ n00e=16
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/12/01 22:24:52
+; The setting was created automatically. 2020/12/01 23:00:06
 ; * pssgEditor version : 0.67.41110.775d208ea8559a9b2267cae93edd70d3f6c3b84a
 psggfile=@@@
 TestControl.psgg
@@ -282,7 +139,7 @@ xlsfile=@@@
 TestControl.xlsx
 @@@
 guid=@@@
-c0a3b647-16d6-4f7d-8854-86eb656b832a
+678608db-bab1-408b-82b9-3870013d4609
 @@@
 bitmap_width=5000
 bitmap_height=2000
@@ -291,7 +148,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-init,Initilized
+varied,Edited a state.
 @@@
 target_pathdir=@@@
 /
@@ -306,7 +163,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":61,"y":47}},{"Key":"S_END","Value":{"x":1130,"y":198}},{"Key":"S_0000","Value":{"x":73,"y":178}},{"Key":"S_GSB000","Value":{"x":156,"y":956}},{"Key":"S_SBS000","Value":{"x":264,"y":975}},{"Key":"S_0001","Value":{"x":381,"y":975}},{"Key":"S_RET000","Value":{"x":599,"y":975}},{"Key":"S_ODD_OR_EVEN","Value":{"x":821,"y":648}},{"Key":"S_SUBSTART2","Value":{"x":686,"y":648}},{"Key":"S_RETURN2","Value":{"x":1215,"y":648}},{"Key":"E_LOOP1","Value":{"x":493,"y":451}},{"Key":"S_ODD","Value":{"x":1023,"y":519}},{"Key":"S_EVEN","Value":{"x":1023,"y":805}},{"Key":"S_LOOP","Value":{"x":495,"y":538}},{"Key":"C_0001","Value":{"x":197,"y":21}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":116,"y":252}},{"Key":"S_END","Value":{"x":602,"y":99}},{"Key":"E_0000","Value":{"x":311,"y":14}},{"Key":"S_TIMER","Value":{"x":313,"y":252}},{"Key":"C_0000","Value":{"x":56,"y":19}},{"Key":"S_START1","Value":{"x":132,"y":349}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -436,7 +293,13 @@ eof>>>
 ●[[state]]とは
     ＃ [[state-cmt]]
 
-    [[command]]
+    <<<?init
+    もし、＿初期化フラグがオンならば
+        [[init]]
+    ここまで
+    >>>
+
+    [[update]]
 
     [[branch]]
 
@@ -472,16 +335,16 @@ template_src=
 template_func=template-statefunc.txt
 
 help=
-helpweb=@@@
-psgg-starter-kit\starterkit2\win-bat\helpweb.html
-@@@
-
+helpweb=
 
 
 src_enc=sjis
 
 
-kitpath=psgg-starter-kit\starterkit2\win-bat
+kitpath=@@@
+psgg-starter-kit\starterkit2\nadesiko\nadesiko-v3
+@@@
+
 
 [setupinfo]
 
@@ -499,12 +362,12 @@ statemachine=TestControl
 
 prefix=__PREFIX__
 xlsdir=@@@
-G:\statego\samples\psgg-nadesiko-sample\m1
+G:\statego\samples\psgg-nadesiko-sample\v3\_test2\m1
 @@@
 
 
 gendir=@@@
-G:\statego\samples\psgg-nadesiko-sample\m1
+G:\statego\samples\psgg-nadesiko-sample\v3\_test2\m1
 @@@
 
 
@@ -517,10 +380,10 @@ code_output_end=【StateGoの自動挿入終了】
 
 [jpn]
 
-title=なでしこＶ１用スタートキット 2020/9/15
+title=なでしこＶ３用スタートキット 2020/9/19
 
 detail=@@@
-なでしこＶ１：日本語プログラミング言語用のステートマシンを作成します。
+なでしこＶ３：日本語プログラミング言語用のステートマシンを作成します。
 
 ※サンプルプロジェクトを次のＵＲＬより入手可能。
 https://github.com/NNNIC/psgg-nadesiko-sample
@@ -528,7 +391,7 @@ https://github.com/NNNIC/psgg-nadesiko-sample
 # 以下のファイルを作成します。
 
       TestControl.pssg     --- StateGo データ ファイル
-      TestControl.nako     --- 変換ソースコード
+      TestControl.nako3     --- 変換ソースコード
 
 @@@
 
@@ -537,7 +400,7 @@ https://github.com/NNNIC/psgg-nadesiko-sample
 
 [en]
 
-title=NADESIKO V1 STARTER KIT 2020/9/15
+title=NADESIKO V3 STARTER KIT 2020/9/19
 
 detail=@@@
 This dialog will create files for a state machine.
@@ -548,7 +411,7 @@ https://github.com/NNNIC/psgg-nadesiko-sample
 # File:
 
       TestControl.pssg  --- StateGo Data File.
-      TestControl.nako   --- Converted Souece File.
+      TestControl.nako3   --- Converted Souece File.
 
 
 @@@
@@ -566,8 +429,8 @@ en=command
 jpn=なでしこの命令を書いてください
 [update]
 
-en=Update code
-jpn=更新コードを指定
+jpn=更新用の命令を書いてください
+en=Write update command
 [state]
 
 en=Specify a state name.
@@ -586,8 +449,8 @@ en=Loop incriment
 jpn=ループインクリメント
 [init]
 
-en=initial code
-jpn=初期化命令を指定
+jpn=初期化用の命令を書いてください
+en=Write initailization code
 [embed]
 
 en=Write embed command.
@@ -642,12 +505,9 @@ loop_next=
 init=
 C_=
 brcond=
-nowait=@@@
-*select
-nowait
-@@@
-
+S_=
 embed=
+loop_init=
 update=
 !uuid=
 state-typ=
@@ -655,10 +515,13 @@ state=
 !dir=
 E_=
 state-cmt=
-loop_init=
+nowait=@@@
+*select
+nowait
+@@@
+
 thumbnail=
 loop_cond=
-S_=
 [stateloc]
 
 E_=S1
@@ -681,5 +544,11 @@ thumbnail=read_only,share,S.+
 
 
 ------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+hash=#bfbZMmDFUX1369D6sbco2Q==
+
+###BITMAP-DATA-BEGIN###
+iVBORw0KGgoAAAANSUhEUgAAAGQAAAAlCAYAAAC05kydAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASFSURBVGhD7ZlbSFRBGMdXBEkKtPCGlRSSSC+xhlgZraViFopEV4p6SUwDw3rRoMiHknqp3qICwW4YWmSZRZmRZXQhuyqKKRlabuoxksLKnc43MHLOnO/sHnePMdEc+CF+//98s+5/z5mZ1eHxeMZV5CXIBYF4iLyEuRxOp9NDRkaIRAwciqLIQARCBiIYMhDBkIEIhkMZHpSBCIRDvWQgAiEDEQyH8v6mDEQgfC7qQz09pLSkhLhSU8n+ffvIaF8f6tNy5dw5sjYri2RnZJCG2lrU8zdoqKkh6S4XKd61iwyrfwfmEQ3TQI6Wl8PzDCU4OJiMud2GMZiXcfLYMYPfCk8aG9F+WrpaW3VjaqqqUF9QUBAZ+/JF57VKdFQU2lMLNo4xOzaWREdGopoW00DKy8rIkuRkMtLbq6ufP3OGTh4xa5auDkAd7g5t7cfAAAkPC6Pas6YmnWYFFkjLnTuoznO/vp76k5OSdHXWZ8b06cSjKDrNCiwQTDMD5mltbiZJixbRsQEF4o3EhAQ6wTcLjy8AQgF/akoKqntjsoGAF8C0i2fPUu2WH49RfwJhr4UxZYGU7d1LJxjs7kZ1DPAviI831H8NDk684N9DQwZ9MoHAJxK863JyUB0APUZ9c/n61o0bqbYhL8+gAf4EogXGWgrE7XZPOhBY4GGC0f5+VOcZHx6mfhjHa3YGwu7E4oICVAfYXHxdmEDo/0MQwQz2KQydNg3VMXbn59MxjXV1Bs1qIBlpaSQ2JoYuzFnp6eTapUsGLwDexU4nqgGw9oGHr1sNZPnSpfRnVEQEKSkqIp0vXqB+HhgzJYGsWLaMNm+6cQPVeWDbDH5YTDHdFywQDNjt9bW36/xMg7tFW+d1TPMGCwRjXlwcOkYL+GwP5ERFBW28ffNmVOdhdxPgz87GG29bWiZ6a+u9795N1GEteXT7NnnQ0EDPRazOjwmETPXOhX7rTe4sBnhsDeTU8eO0aW52NqrzQAAhISF0DNwlmCdQ2KPwY1ubrq58+EA3EKAx0tU37qu6hWe/a/2BYqUn6LYFcuTgQdpwXW4uqvP8VA9f7EViB0i7eHz3Lp2DP/t4A/zbNm1CNX9ZmJhI+2IaA3RbAtm+ZQttdvjAAVTngYMk+ENDQ+nuCvPYBTtXvHz4ENV5rl64QP39HR2o7i+R6gIPfTGNAXrAgbADIJx+MZ2n5/Vr6g8PD7d9zcAw2zFhsPUsfv58VPcX+G4P+vratIAnoEBioqNpk0+dnQYNA7Z/4M9cuRLVzfC27WXnl/OnT+vq8Oauzsyk2p7CQp2G8UbdAMCODPwwH+bxtu29Xl1NZqofso7nz3V1d1cXHQN8//xZp/GAJ6BA2ES+YP776jYY03me3runm8dKIGYU7dyp8zPYd2da5s6Z4/UR6isQvp+W7levDGMAzKsFHWMWiGhUV1aS1eqBcJXLRdcCzMOAtQXOS7lr1pD6y5dRjz8o6vp4qLSU9s7fscNwBrKDfyaQ/wUZiGDIQARDBiIYMhDBkIEIhgxEMGQggiEDEQwZiFCMkD+pEYMazepetAAAAABJRU5ErkJggg==
+###BITMAP-DATA-END###
 
 
