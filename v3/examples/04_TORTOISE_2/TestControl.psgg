@@ -1,7 +1,7 @@
 ﻿;PSGG Editor Backup File
 version=1.1
 file=TestControl.xlsx
-guid=678608db-bab1-408b-82b9-3870013d4609
+guid=99c22842-83d0-4d46-b928-d647dd8b8b67
 ;set read_from  excel or psgg
 read_from=psgg
 ;set savemode with_excel or psgg_only
@@ -12,10 +12,10 @@ check_excel_writable=no
 ------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
 
 sheet=state-chart
-nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n015,n007,n016,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,,,
-stateid_list=,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,s002c,s002d,s002e,s002f,,s0030
-max_name_id=22
-max_state_id=50
+nameid_list=,n001,n002,n003,n004,n00f,n005,n006,,n014,n007,,n010,,n011,n012,n013,,n009,n00a,n00b,,n00c,n00d,n00e,,,
+stateid_list=,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,s002c,s002d,s0031,s002f,s0033,s0034,s0032,s0035,s0036,s0037,s0038,s0039,s003a,s003b,s003c,s003d,s003e,s0040,s003f
+max_name_id=20
+max_state_id=64
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -23,7 +23,7 @@ n003=state-cmt
 n004=state-ref
 n005=basestate
 n006=nextstate
-n007=update
+n007=command
 n009=branch
 n00a=branch-cmt
 n00b=brcond
@@ -36,29 +36,41 @@ n011=loop_init
 n012=loop_cond
 n013=loop_next
 n014=embed
-n015=init
-n016=wait
 
 
 [id_state_dic]
 s002c=S_START
 s002d=S_END
-s002e=E_API
-s002f=S_CHECKRES
-s0030=C_0000
+s002f=S_SBS002
+s0031=S_0003
+s0032=C_0000
+s0033=S_0004
+s0034=E_0000
+s0035=S_0005
+s0036=S_LOP000
+s0037=S_0000
+s0038=S_SBS000
+s0039=S_RET000
+s003a=E_0001
+s003b=S_SBS001
+s003c=S_CALC
+s003d=E_0002
+s003e=S_SETSPEED
+s003f=S_LOP001
+s0040=S_RET001
 
 
 [s002c]
 n002=S_START
 n00f=start
-n006=S_CHECKRES
+n006=S_0003
 n00c=@@@
 /
 (100,100)
 The root
 @@@
 
-n00d=72,388
+n00d=61,281
 n00e=1
 
 [s002d]
@@ -70,76 +82,260 @@ n00c=@@@
 The root
 @@@
 
-n00d=562,145
+n00d=1017,281
 n00e=2
 
-[s002e]
-n001=(bitmap)
-n002=E_API
-n014=@@@
-API=「https://api.aoikujira.com/tenki/week.php?fmt=json&city=東京」
-RESは空
-APIにAJAX送信した時には
-　　対象をJSONデコードして天気に代入。
-　　# 天気["東京"][0]["forecast"]を表示。
-    RES=天気["東京"][0]["forecast"]
-ここまで。
-天気ラベル＝「---」のラベル作成。
-１回、改行作成。
-時計ラベル＝「---」のラベル作成。
+[s002f]
+n002=S_SBS002
+n00f=substart
+n006=S_CALC
+n007=
+n00c=@@@
+/
+(100,100)
+The root
+@@@
 
+n00d=40,551
+n00e=21
+
+[s0031]
+n002=S_0003
+n006=S_LOP001
+n007=カメ作成。
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=220,281
+n00e=5
+
+[s0032]
+n002=C_0000
+n003=@@@
+簡易エディタ-タートルグラフィックス用
+リンクを開く
+@@@
+
+n004=@@@
+https://nadesi.com/doc3/index.php?%E3%81%AA%E3%81%A7%E3%81%97%E3%81%933%E7%B0%A1%E6%98%93%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF-%E3%82%BF%E3%83%BC%E3%83%88%E3%83%AB%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9%E7%94%A8
 @@@
 
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n00d=266,139
+n00d=118,6
 n00e=6
 
-[s002f]
-n002=S_CHECKRES
-n006=
-n015=
+[s0033]
+n002=S_0004
+n006=S_0005
+n007=[250,20]にカメ起点移動。
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=549,551
+n00e=7
+
+[s0034]
+n002=E_0000
+n014=@@@
+N=4           #分割数
+R=150         #半径
+@@@
+
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=295,14
+n00e=8
+
+[s0035]
+n002=S_0005
+n006=S_LOP000
+n007=KAME_SAにカメ角度設定。
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=732,551
+n00e=9
+
+[s0036]
+n002=S_LOP000
+n00f=loop
+n006=S_RET001
+n010=S_SBS000
+n011=I=0
+n012=I<N
+n013=I=I+1
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=978,551
+n00e=10
+
+[s0037]
+n001=(bitmap)
+n002=S_0000
+n006=S_RET000
+n007=KAME_MAだけカメ右回転
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=711,795
+n00e=12
+
+[s0038]
+n002=S_SBS000
+n00f=substart
+n006=S_SBS001
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=422,795
+n00e=11
+
+[s0039]
+n002=S_RET000
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=940,795
+n00e=13
+
+[s003a]
+n002=E_0001
+n014=I=0
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=658,23
+n00e=14
+
+[s003b]
+n002=S_SBS001
+n006=S_0000
+n007=KAME_MLだけカメ進む
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=523,795
+n00e=15
+
+[s003c]
+n002=S_CALC
+n006=S_SETSPEED
 n007=@@@
-時計ラベルに今をテキスト設定。
-もし、天気ラベルが空でなければ
-   天気ラベルにRESをテキスト設定
-ここまで
-
-@@@
-
-n016=RESは空
-n009=
-n00a=
-n00b=
-n00c=@@@
-/
-(100,100)
-
-@@@
-
-n00d=273,385
-n00e=4
-
-[s0030]
-n001=
-n002=C_0000
-n003=APIサンプル
-n004=@@@
-https://news.mynavi.jp/article/nadeshiko-54/
+AO=360/N      #分割三角形の中心角
+AR=(180-AO)/2 #分割三角形の円接点角
+KAME_SA=180-AR   #出発点角度
+KAME_MA=180-AR*2 #移動角度
+KAME_ML=SIN((90-AR)*(PI/180)) * R * 2
 @@@
 
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
-n00d=74,145
-n00e=5
+n00d=154,551
+n00e=16
+
+[s003d]
+n002=E_0002
+n003=宣言
+n014=@@@
+AO=0      #分割三角形の中心角
+AR=0      #分割三角形の円接点角
+KAME_SA=0 #出発点角度
+KAME_MA=0 #移動角度
+KAME_ML=0 #移動距離
+@@@
+
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=471,14
+n00e=17
+
+[s003e]
+n002=S_SETSPEED
+n006=S_0004
+n007=(KAME_ML*200/R)にカメ速度設定。
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=348,551
+n00e=18
+
+[s003f]
+n002=S_LOP001
+n00f=loop
+n006=S_END
+n010=S_SBS002
+n011=N=3
+n012=N<10
+n013=N=N+1
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=434,281
+n00e=20
+
+[s0040]
+n002=S_RET001
+n00f=subreturn
+n00c=@@@
+/
+(100,100)
+The root
+@@@
+
+n00d=1112,551
+n00e=22
 
 
 
@@ -148,7 +344,7 @@ n00e=5
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/12/01 23:47:13
+; The setting was created automatically. 2020/12/02 23:29:33
 ; * pssgEditor version : 0.67.41110.775d208ea8559a9b2267cae93edd70d3f6c3b84a
 psggfile=@@@
 TestControl.psgg
@@ -157,7 +353,7 @@ xlsfile=@@@
 TestControl.xlsx
 @@@
 guid=@@@
-678608db-bab1-408b-82b9-3870013d4609
+99c22842-83d0-4d46-b928-d647dd8b8b67
 @@@
 bitmap_width=5000
 bitmap_height=2000
@@ -166,7 +362,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-mov,S_END
+mov,align H
 @@@
 target_pathdir=@@@
 /
@@ -181,7 +377,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":72,"y":388}},{"Key":"S_END","Value":{"x":562,"y":145}},{"Key":"C_0000","Value":{"x":74,"y":145}},{"Key":"E_API","Value":{"x":266,"y":139}},{"Key":"S_CHECKRES","Value":{"x":273,"y":385}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":60.705883,"y":281}},{"Key":"S_END","Value":{"x":1017,"y":281}},{"Key":"S_0002","Value":{"x":951,"y":547}},{"Key":"S_0003","Value":{"x":220,"y":281}},{"Key":"C_0000","Value":{"x":118,"y":6}},{"Key":"S_0004","Value":{"x":549,"y":551}},{"Key":"E_0000","Value":{"x":295,"y":14}},{"Key":"S_0005","Value":{"x":732,"y":551}},{"Key":"S_LOP000","Value":{"x":978,"y":551}},{"Key":"S_SBS000","Value":{"x":422,"y":795}},{"Key":"S_0000","Value":{"x":711,"y":795}},{"Key":"S_RET000","Value":{"x":940,"y":795}},{"Key":"E_0001","Value":{"x":658,"y":23}},{"Key":"S_SBS001","Value":{"x":523,"y":795}},{"Key":"S_CALC","Value":{"x":154,"y":551}},{"Key":"E_0002","Value":{"x":471,"y":14}},{"Key":"S_SETSPEED","Value":{"x":348,"y":551}},{"Key":"S_START1","Value":{"x":49,"y":261}},{"Key":"S_LOP001","Value":{"x":434,"y":281}},{"Key":"S_SBS002","Value":{"x":39.94117,"y":551}},{"Key":"S_RET001","Value":{"x":1112,"y":551}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -311,19 +507,7 @@ eof>>>
 ●[[state]]とは
     ＃ [[state-cmt]]
 
-    <<<?init
-    もし、＿初期化フラグがオンならば
-        [[init]]
-    ここまで
-    >>>
-
-    [[update]]
-
-    <<<?wait
-    もし、([[wait]])ならば
-        戻る
-　　ここまで
-    >>>
+    [[command]]
 
     [[branch]]
 
@@ -386,12 +570,12 @@ statemachine=TestControl
 
 prefix=__PREFIX__
 xlsdir=@@@
-G:\statego\samples\psgg-nadesiko-sample\v3\_test2\m1
+G:\statego\samples\psgg-nadesiko-sample\v3\examples\04_TORTOISE
 @@@
 
 
 gendir=@@@
-G:\statego\samples\psgg-nadesiko-sample\v3\_test2\m1
+G:\statego\samples\psgg-nadesiko-sample\v3\examples\04_TORTOISE
 @@@
 
 
@@ -453,12 +637,12 @@ en=command
 jpn=なでしこの命令を書いてください
 [update]
 
-jpn=更新用の命令を書いてください
-en=Write update command
-[wait]
+en=Update code
+jpn=更新コードを指定
+[state]
 
-en=Write wait condition
-jpn=待つ条件を書いてください。
+en=Specify a state name.
+jpn=ステート名を指定
 [gosubstate]
 
 en=Call subroutine
@@ -473,8 +657,8 @@ en=Loop incriment
 jpn=ループインクリメント
 [init]
 
-jpn=初期化用の命令を書いてください
-en=Write initailization code
+en=initial code
+jpn=初期化命令を指定
 [embed]
 
 en=Write embed command.
@@ -487,10 +671,6 @@ jpn=ベースステート
 
 en=State type
 jpn=ステートタイプ
-[state]
-
-en=Specify a state name.
-jpn=ステート名を指定
 [state-cmt]
 
 en=Comment
@@ -520,37 +700,36 @@ sheet=itemsinfo
 ###VARIOUS-CONTENTS-BEGIN###
 [inpmethod]
 
-init=
-branch-cmt=
-state-ref=
-wait=
-embed=
-loop_cond=
-branch=
-!dir=
-command-cmt=
 nextstate=
+branch=
 command=
-loop_init=
-thumbnail=
+!pos=
 gosubstate=
+state-ref=
+basestate=
+command-cmt=
+branch-cmt=
+loop_next=
+init=
+C_=
+brcond=
 nowait=@@@
 *select
 nowait
 @@@
 
-state-cmt=
-state-typ=
-!pos=
-!uuid=
-state=
-S_=
-brcond=
+embed=
 update=
-basestate=
-loop_next=
-C_=
+!uuid=
+state-typ=
+state=
+!dir=
 E_=
+state-cmt=
+loop_init=
+thumbnail=
+loop_cond=
+S_=
 [stateloc]
 
 E_=S1
