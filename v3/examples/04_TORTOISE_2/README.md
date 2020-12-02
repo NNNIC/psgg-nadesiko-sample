@@ -1,6 +1,6 @@
 # 使い方
 
-1. TestControl.psggを StteGoで開く  
+1. TestControl.psggを [StateGo]()で開く  
 2. 保存＆変換ボタンを押す  
 3. なでしこ簡易エディタタートルグラフィックス用をオープン
 4. ソースをペースト
