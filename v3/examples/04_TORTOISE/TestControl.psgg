@@ -319,7 +319,7 @@ n00e=18
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/12/04 23:03:15
+; The setting was created automatically. 2020/12/05 0:22:02
 ; * pssgEditor version : 0.67.41110.775d208ea8559a9b2267cae93edd70d3f6c3b84a
 psggfile=@@@
 TestControl.psgg
@@ -337,7 +337,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-mov,align H
+init,Saved
 @@@
 target_pathdir=@@@
 /
