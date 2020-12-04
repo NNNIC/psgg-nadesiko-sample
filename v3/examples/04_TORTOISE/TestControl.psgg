@@ -162,7 +162,7 @@ n00c=@@@
 The root
 @@@
 
-n00d=328,25
+n00d=328,6
 n00e=8
 
 [s0035]
@@ -203,7 +203,7 @@ n007=KAME_MAだけカメ右回転
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
 n00d=518,878
@@ -228,7 +228,7 @@ n00f=subreturn
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
 n00d=747,884
@@ -240,7 +240,7 @@ n014=I=0
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
 n00d=88,719
@@ -253,7 +253,7 @@ n007=KAME_MLだけカメ進む
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
 n00d=330,880
@@ -273,7 +273,7 @@ KAME_ML=SIN((90-AR)*(PI/180)) * R * 2
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
 n00d=88,158
@@ -296,7 +296,7 @@ n00c=@@@
 The root
 @@@
 
-n00d=509,32
+n00d=509,6
 n00e=17
 
 [s003e]
@@ -306,7 +306,7 @@ n007=(KAME_ML*100/R)にカメ速度設定。
 n00c=@@@
 /
 (100,100)
-
+The root
 @@@
 
 n00d=294,161
@@ -319,7 +319,7 @@ n00e=18
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/12/02 23:13:36
+; The setting was created automatically. 2020/12/04 23:03:15
 ; * pssgEditor version : 0.67.41110.775d208ea8559a9b2267cae93edd70d3f6c3b84a
 psggfile=@@@
 TestControl.psgg
@@ -337,7 +337,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-varied,Edited a state.
+mov,align H
 @@@
 target_pathdir=@@@
 /
@@ -352,7 +352,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":16,"y":26}},{"Key":"S_END","Value":{"x":860,"y":77}},{"Key":"S_0002","Value":{"x":951,"y":547}},{"Key":"S_0003","Value":{"x":107,"y":542}},{"Key":"C_0000","Value":{"x":118,"y":6}},{"Key":"S_0004","Value":{"x":334,"y":547}},{"Key":"S_START1","Value":{"x":81.57141,"y":181.2381}},{"Key":"E_0000","Value":{"x":328,"y":25}},{"Key":"S_0005","Value":{"x":505,"y":548}},{"Key":"S_LOP000","Value":{"x":78,"y":823}},{"Key":"S_GSB000","Value":{"x":341,"y":606}},{"Key":"S_SBS000","Value":{"x":229,"y":882}},{"Key":"S_0000","Value":{"x":518,"y":878}},{"Key":"S_RET000","Value":{"x":747,"y":884}},{"Key":"E_0001","Value":{"x":88,"y":719}},{"Key":"S_SBS001","Value":{"x":330,"y":880}},{"Key":"S_CALC","Value":{"x":88,"y":158}},{"Key":"E_0002","Value":{"x":509,"y":32}},{"Key":"S_SETSPEED","Value":{"x":294,"y":161}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":16,"y":26}},{"Key":"S_END","Value":{"x":860,"y":77}},{"Key":"S_0002","Value":{"x":951,"y":547}},{"Key":"S_0003","Value":{"x":107,"y":542}},{"Key":"C_0000","Value":{"x":118,"y":6}},{"Key":"S_0004","Value":{"x":334,"y":547}},{"Key":"E_0000","Value":{"x":328,"y":6}},{"Key":"S_0005","Value":{"x":505,"y":548}},{"Key":"S_LOP000","Value":{"x":78,"y":823}},{"Key":"S_SBS000","Value":{"x":229,"y":882}},{"Key":"S_0000","Value":{"x":518,"y":878}},{"Key":"S_RET000","Value":{"x":747,"y":884}},{"Key":"E_0001","Value":{"x":88,"y":719}},{"Key":"S_SBS001","Value":{"x":330,"y":880}},{"Key":"S_CALC","Value":{"x":88,"y":158}},{"Key":"E_0002","Value":{"x":509,"y":6}},{"Key":"S_SETSPEED","Value":{"x":294,"y":161}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
