@@ -87,6 +87,7 @@ n00e=2
 n002=S_0002
 n006=S_END
 n007=@@@
+カメ作成。
 150だけカメ進む。
 90だけカメ右回転。
 50だけカメ進む。
@@ -319,7 +320,7 @@ n00e=18
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/12/05 0:22:02
+; The setting was created automatically. 2020/12/05 10:28:05
 ; * pssgEditor version : 0.67.41110.775d208ea8559a9b2267cae93edd70d3f6c3b84a
 psggfile=@@@
 TestControl.psgg
